@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+li {
+  list-style-type: none;
+}
+
+img {
+  width: 300px;
+}
+
+h3 {
+  color: #058cc2;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

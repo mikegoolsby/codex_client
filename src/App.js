@@ -3,8 +3,10 @@ import './App.css';
 import { Route, Link, Switch } from "react-router-dom";
 import Gear from "./Gear.js";
 import Home from "./Home.js";
+import Interview from "./Interview"
 import Video from "./Video.js";
 import Cheatsheet from "./Cheatsheet.js"
+
 
 function App() {
   // backend URL
@@ -72,6 +74,7 @@ function App() {
     }).then((response) => getGear());
   }
 
+
   return (
     <div className="App">
       <header id="header">
@@ -85,7 +88,9 @@ function App() {
           <a href="#">Cheatsheets</a>
           <a href="#">Code Games</a>
           <a href="#">Videos</a>
-          <a href="#">Interview</a>
+          <Link to="/interviewprep">
+            <a>Interview Prep</a>
+          </Link>
           <span class="line"></span>
 	      </nav>
       </header>
