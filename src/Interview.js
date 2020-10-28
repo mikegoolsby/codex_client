@@ -1,27 +1,26 @@
 import React from "react"
 import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 const Interview = (props) => {
 
-    const {interviews} = props
+    const {interview} = props
     
-    const loadInterviews = () => {
+    const loadInterviews = () => (
+        
         <div className="content">
-            {interviews.map((interview) => {
-            <Grid
-            container
-            direction="row"
-            justify="center"
-            alignItems="center"
-            >
-                <h3>{interview.name}</h3>
-            </Grid>
+            {interview.map((interview) => {
+            <div>
+                <h1>{interview.name}</h1>
+                <h3>Price: ›{interview.price}</h3>
+                <p>{interview.description}</p>
+            </div>
             })}
         </div>
-          const loading = <h1>Loading...</h1>
-    return interviews.length > 0 ? loadInterviews() : loading  
-    }
-
+    )
+    const loading = <h1>Loading...</h1>
+return interview.length > 0 ? loadInterviews() : loading  
 }
 
 
