@@ -7,12 +7,12 @@ const Video = (props) => {
     
     const loadVideo = () => (
         
-        <div className="content">
+        <div>
             {video.map((video) => (
-                <div>
+                <div className="content">
                     <h1>{video.name}</h1>
                     <p>{video.description}</p>
-                    <a href={video.url}></a>
+                    <a href={video.url}>{video.url}</a>
                 </div>
             ))}
         </div>

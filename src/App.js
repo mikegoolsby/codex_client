@@ -6,6 +6,7 @@ import Home from "./Home.js";
 import Interview from "./Interview"
 import Video from "./Video.js";
 import Cheatsheet from "./Cheatsheet.js"
+import Codegame from "./Codegame.js"
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   const [gear, setGear] = React.useState([])
   const [interview, setInterview] = React.useState([])
   const [video, setVideo] = React.useState([])
+  const [game, setGame] = React.useState([])
 
   // Empty Gear
   const emptyGear = {
@@ -55,11 +57,20 @@ function App() {
         setVideo(data);
       })
   }
+  const getGame = () => {
+    fetch(url + "/codegames/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setGame(data);
+      })
+  }
 
   // UseEffect to do initial fetch of gear
   React.useEffect(() => getGear(), []);
   React.useEffect(() => getInterview(), []);
   React.useEffect(() => getVideo(), []);
+  React.useEffect(() => getGame(), []);
 
   // handleCreate to create new gear
   const handleCreate = (newGear) => {
@@ -108,8 +119,12 @@ function App() {
             <a>Tech Gear</a>
           </Link>
           <a href="#">Cheatsheets</a>
-          <a href="#">Code Games</a>
-          <a href="#">Videos</a>
+          <Link to="/codegames">
+            <a>Code Games</a>
+          </Link>
+          <Link to="/video">
+            <a>Videos</a>
+          </Link>
           <Link to="/interviewprep">
             <a>Interview Prep</a>
           </Link>
@@ -120,9 +135,9 @@ function App() {
         <Switch>
           <Route exact path="/" render={(rp) => <Home/>} />
           <Route exact path="/gear" render={(rp) => <Gear {...rp} gear= {gear} selectGear={selectGear} deleteGear= {deleteGear}/>} />
-          <Route exact path="/interviewprep" render={(rp) => <Interview {...rp} interview={interview}/>}>
-          <Route exact path="/video" render={(rp) => <Video {...rp} video={video}/>}></Route>
-          </Route>
+          <Route exact path="/interviewprep" render={(rp) => <Interview {...rp} interview={interview}/>} />
+          <Route exact path="/video" render={(rp) => <Video {...rp} video= {video}/>}/>          
+          <Route exact path="/codegames" render={(rp) => <Codegame {...rp} game= {game}/>}/>          
         </Switch>
       </main>
     </div>
