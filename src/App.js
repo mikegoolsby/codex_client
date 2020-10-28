@@ -14,6 +14,7 @@ function App() {
 
   // State to Hold Gear
   const [gear, setGear] = React.useState([])
+  const [interview, setInterview] = React.useState([])
 
   // Empty Gear
   const emptyGear = {
@@ -24,6 +25,7 @@ function App() {
     url: "",
     img: ""
   }
+
 
   // selectGear, this will act as the piece of tech gear to be edited
   const [selectedGear, setSelectedGear] = React.useState(emptyGear)
@@ -36,8 +38,18 @@ function App() {
         setGear(data);
       })
   }
+  const getInterview = () => {
+    fetch(url + "/interviewprep/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setInterview(data);
+      })
+  }
+
   // UseEffect to do initial fetch of gear
   React.useEffect(() => getGear(), []);
+  React.useEffect(() => getInterview(), []);
 
   // handleCreate to create new gear
   const handleCreate = (newGear) => {
@@ -98,6 +110,9 @@ function App() {
         <Switch>
           <Route exact path="/" render={(rp) => <Home/>} />
           <Route exact path="/gear" render={(rp) => <Gear {...rp} gear= {gear} selectGear={selectGear} deleteGear= {deleteGear}/>} />
+          <Route exact path="/interviewprep" render={(rp) => <Interview {...rp} interview={interview}/>}>
+
+          </Route>
         </Switch>
       </main>
     </div>
