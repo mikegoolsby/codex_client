@@ -4,8 +4,9 @@ import { Route, Link, Switch } from "react-router-dom";
 import Gear from "./Gear.js";
 import Home from "./Home.js";
 import Interview from "./Interview"
+import Cheatsheet from "./Cheatsheet"
 import Video from "./Video.js";
-import Cheatsheet from "./Cheatsheet.js"
+
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   // State to Hold Gear
   const [gear, setGear] = React.useState([])
   const [interview, setInterview] = React.useState([])
+  const [cheatsheet, setCheatsheet] = React.useState([])
 
   // Empty Gear
   const emptyGear = {
@@ -46,10 +48,20 @@ function App() {
         setInterview(data);
       })
   }
+  const getCheatsheet = () => {
+    fetch(url + "/cheatsheet/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setCheatsheet(data);
+      })
+  }
+
 
   // UseEffect to do initial fetch of gear
   React.useEffect(() => getGear(), []);
   React.useEffect(() => getInterview(), []);
+  React.useEffect(() => getCheatsheet(), []);
 
   // handleCreate to create new gear
   const handleCreate = (newGear) => {
@@ -97,7 +109,9 @@ function App() {
           <Link to="/gear">
             <a>Tech Gear</a>
           </Link>
-          <a href="#">Cheatsheets</a>
+          <Link to="/cheatsheets">
+            <a>Cheatsheets</a>
+          </Link>
           <a href="#">Code Games</a>
           <a href="#">Videos</a>
           <Link to="/interviewprep">
@@ -111,6 +125,8 @@ function App() {
           <Route exact path="/" render={(rp) => <Home/>} />
           <Route exact path="/gear" render={(rp) => <Gear {...rp} gear= {gear} selectGear={selectGear} deleteGear= {deleteGear}/>} />
           <Route exact path="/interviewprep" render={(rp) => <Interview {...rp} interview={interview}/>}>
+          </Route>
+          <Route exact path="/cheatsheets" render={(rp) => <Cheatsheet {...rp} cheatsheet={cheatsheet}></Cheatsheet>}>
 
           </Route>
         </Switch>
