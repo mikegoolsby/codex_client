@@ -26,6 +26,7 @@ function App() {
     img: ""
   }
 
+
   // selectGear, this will act as the piece of tech gear to be edited
   const [selectedGear, setSelectedGear] = React.useState(emptyGear)
   // fetching from the gear API
