@@ -3,8 +3,10 @@ import './App.css';
 import { Route, Link, Switch } from "react-router-dom";
 import Gear from "./Gear.js";
 import Home from "./Home.js";
+import Interview from "./Interview"
 import Video from "./Video.js";
 import Cheatsheet from "./Cheatsheet.js"
+
 
 function App() {
   // backend URL
@@ -12,6 +14,8 @@ function App() {
 
   // State to Hold Gear
   const [gear, setGear] = React.useState([])
+  const [interview, setInterview] = React.useState([])
+  const [video, setVideo] = React.useState([])
 
   // Empty Gear
   const emptyGear = {
@@ -22,6 +26,7 @@ function App() {
     url: "",
     img: ""
   }
+
 
   // selectGear, this will act as the piece of tech gear to be edited
   const [selectedGear, setSelectedGear] = React.useState(emptyGear)
@@ -34,8 +39,27 @@ function App() {
         setGear(data);
       })
   }
+  const getInterview = () => {
+    fetch(url + "/interviewprep/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setInterview(data);
+      })
+  }
+  const getVideo = () => {
+    fetch(url + "/video/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setVideo(data);
+      })
+  }
+
   // UseEffect to do initial fetch of gear
   React.useEffect(() => getGear(), []);
+  React.useEffect(() => getInterview(), []);
+  React.useEffect(() => getVideo(), []);
 
   // handleCreate to create new gear
   const handleCreate = (newGear) => {
@@ -72,6 +96,7 @@ function App() {
     }).then((response) => getGear());
   }
 
+
   return (
     <div className="App">
       <header id="header">
@@ -85,7 +110,9 @@ function App() {
           <a href="#">Cheatsheets</a>
           <a href="#">Code Games</a>
           <a href="#">Videos</a>
-          <a href="#">Interview</a>
+          <Link to="/interviewprep">
+            <a>Interview Prep</a>
+          </Link>
           <span class="line"></span>
 	      </nav>
       </header>
@@ -93,6 +120,9 @@ function App() {
         <Switch>
           <Route exact path="/" render={(rp) => <Home/>} />
           <Route exact path="/gear" render={(rp) => <Gear {...rp} gear= {gear} selectGear={selectGear} deleteGear= {deleteGear}/>} />
+          <Route exact path="/interviewprep" render={(rp) => <Interview {...rp} interview={interview}/>}>
+          <Route exact path="/video" render={(rp) => <Video {...rp} video={video}/>}></Route>
+          </Route>
         </Switch>
       </main>
     </div>
