@@ -9,7 +9,7 @@ const Video = (props) => {
         
         <div>
             {video.map((video) => (
-                <div className="content">
+                <div className="content shrink">
                     <h1>{video.name}</h1>
                     <p>{video.description}</p>
                     <a href={video.url}>{video.url}</a>
