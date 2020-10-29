@@ -11,7 +11,7 @@ html, body { min-height: 100%; }
         -ms-transform: scale(0.9);
 		transform: scale(0.9);
 		transition: 120ms;
-		opacity: 6%;
+		opacity: .94;
 		border-style: solid;
 		border-color: #0b9881;
 }
