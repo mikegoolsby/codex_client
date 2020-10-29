@@ -108,7 +108,7 @@ code {
   color: #DFC590;
 }
 
-.icon-btn {
+/* .icon-btn {
 	width: 50px;
 	height: 50px;
 	border: 1px solid #cdcdcd;
@@ -188,7 +188,7 @@ code {
 	right: 15px;
 	height: 4px;
 	top: calc(50% - 2px);
-  }
+  } */
 
   .infocardContainer * {
 	font-family: 'Fira Sans Condensed', sans-serif;
