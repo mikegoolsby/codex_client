@@ -7,9 +7,9 @@ const Interview = (props) => {
     
     const loadInterviews = () => (
         
-        <div className="content">
+        <div>
             {interview.map((interview) => (
-                <div>
+                <div  className="content">
                     <a href={interview.url}><img src={interview.img}></img></a>
                     <h1>{interview.name}</h1>
                     <h3>Price: {interview.price}</h3>
