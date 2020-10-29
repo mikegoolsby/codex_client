@@ -49,6 +49,7 @@ code {
   padding: 0 1% 0 1%;
   --items: 6;
 }
+
 .links > a {
 	color: #009881;
 	padding: .75em;
@@ -56,12 +57,29 @@ code {
 	text-decoration: none;
 	transition: all .5s;
 }
+
+.tech {
+	color:#FF00FF;
+}
+
+.games {
+	color:#00BFFF;
+}
+
+.videos {
+	color: white;
+}
+
+.cheatsheet {
+	color: #DFC590;
+}
 .links > a:hover {
 	background: #ffffff06;
 	color: #009881;
 }
+/* #009881 */
 .links > .line {
-	background: #009881;
+	/* background: white; */
 	height: 1px;
 	pointer-events: none;
 }
@@ -91,6 +109,31 @@ code {
 .links > a:hover ~ .line {
 	opacity: 1;
 }
+
+.links > a:nth-of-type(1):hover ~ .line { 
+	background: #009881;
+}
+
+.links > a:nth-of-type(2):hover ~ .line { 
+	background: purple;
+}
+
+.links > a:nth-of-type(3):hover ~ .line { 
+	background: #00BFFF;
+}
+
+.links > a:nth-of-type(4):hover ~ .line { 
+	background: white;
+}
+
+.links > a:nth-of-type(5):hover ~ .line { 
+	background: #DFC590;
+}
+
+.links > a:nth-of-type(6):hover ~ .line { 
+	background: #009881;
+}
+
 
 .links > a:nth-of-type(1):hover ~ .line { --index: 1; }
 .links > a:nth-of-type(2):hover ~ .line { --index: 2; }
