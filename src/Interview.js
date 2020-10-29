@@ -10,7 +10,7 @@ const Interview = (props) => {
         <div>
             {interview.map((interview) => (
                 <div  className="content">
-                    <a href={interview.url}><img src={interview.img}></img></a>
+                    <a href={interview.url} target="_blank"><img src={interview.img}></img></a>
                     <h1>{interview.name}</h1>
                     <h3>Price: {interview.price}</h3>
                     <p>{interview.description}</p>
