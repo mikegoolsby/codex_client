@@ -21,16 +21,22 @@ const Gear = (props) => {
   const loaded = () => (
     <div>
       {gear.map((gear) => (
-        <div class="infocardContainer">
-          <div id="main">
-            <img src={gear.img}></img>
+        <div className="card">
+          <div className="left">
+            <img className="img-gear" src={gear.img}></img>
           </div>
-          <div id="textbois">
-            <h2>{gear.name}</h2>
-            <h4>Price: {gear.price}</h4>
-            <p>{gear.description}</p>
-            <h3>Review</h3><p>{gear.review}</p>
-            
+          <div className="right">
+            <div className="product-info">
+              <h1 className="h1-gear">{gear.name}</h1>
+            </div>
+            <div className="details">
+              <h3 className="price-gear">Price - ${gear.price}</h3>
+              <p className="p-gear">{gear.description}</p>
+              <hr className="style"></hr>
+              <h3 className="review-gear">Review</h3>
+              <p className="p-gear">{gear.review}</p>
+              <button className="btn-gear"> <i class="fa fa-shopping-bag"></i>Buy Now</button>
+            </div> 
           </div>
         </div>  
 //         <div className="content">
