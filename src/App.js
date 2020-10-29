@@ -131,21 +131,21 @@ function App() {
           <a>Home</a>
           </Link>
           <Link to="/gear">
-            <a>Tech Gear</a>
+            <a className="tech">Tech Gear</a>
           </Link>
 
           <Link to="/codegames">
-            <a>Code Games</a>
+            <a className="games">Code Games</a>
           </Link>
           <Link to="/video">
-            <a>Videos</a>
+            <a className="videos">Videos</a>
           </Link>
 
           <Link to="/cheatsheets">
-            <a>Cheatsheets</a>
+            <a className="cheatsheet">Cheatsheets</a>
           </Link>
           <Link to="/interviewprep">
-            <a>Interview Prep</a>
+            <a className="intPrep">Interview Prep</a>
           </Link>
           <span class="line"></span>
 	      </nav>
