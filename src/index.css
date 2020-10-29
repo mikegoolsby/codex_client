@@ -107,3 +107,174 @@ code {
 .title{
   color: #DFC590;
 }
+
+/* .icon-btn {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #cdcdcd;
+	background: black;
+	border-radius: 25px;
+	overflow: hidden;
+	position: relative;
+	transition: width 0.2s ease-in-out;
+  }
+  .add-btn:hover {
+	width: 120px;
+  }
+  .add-btn::before,
+  .add-btn::after {
+	transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+	content: "";
+	position: absolute;
+	height: 4px;
+	width: 10px;
+	top: calc(50% - 2px);
+	background: #009881;
+  }
+  .add-btn::after {
+	right: 14px;
+	overflow: hidden;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+  }
+  .add-btn::before {
+	left: 14px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+  }
+  .icon-btn:focus {
+	outline: none;
+  }
+  .btn-txt {
+	opacity: 0;
+	transition: opacity 0.2s;
+	color: #009881;
+  }
+  .add-btn:hover::before,
+  .add-btn:hover::after {
+	width: 4px;
+	border-radius: 2px;
+  }
+  .add-btn:hover .btn-txt {
+	opacity: 1;
+  }
+  .add-icon::after,
+  .add-icon::before {
+	transition: all 0.2s ease-in-out;
+	content: "";
+	position: absolute;
+	height: 20px;
+	width: 2px;
+	top: calc(50% - 10px);
+	background: #009881;
+	overflow: hidden;
+  }
+  .add-icon::before {
+	left: 22px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+  }
+  .add-icon::after {
+	right: 22px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+  }
+  .add-btn:hover .add-icon::before {
+	left: 15px;
+	height: 4px;
+	top: calc(50% - 2px);
+  }
+  .add-btn:hover .add-icon::after {
+	right: 15px;
+	height: 4px;
+	top: calc(50% - 2px);
+  } */
+
+  .infocardContainer * {
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-weight: 300;
+	background-color: black;
+  }
+
+  .infocardContainer {
+	display: flex;
+	height: 300px;
+	width: 300px;
+	border-radius: 100px;
+	background: linear-gradient(121deg, rgba(255,255,255,0) 13%, rgba(0,159,255,1) 100%);
+	transition: all 500ms ease-in;
+	transition-delay: 1s;
+	margin: auto;
+	margin-top: 100px;
+	--margin-top: 100px;
+  }
+  .infocardContainer:hover {
+	width: 700px;
+	border-radius: 100px 10px 100px 100px;
+	transition: all 0.5s ease-out;
+  }
+  
+  .infocardContainer div {
+	color: #009881;
+	flex-shrink: 1;
+	width: 100%;
+	--background-color: green;
+  }
+  .infocardContainer div * {
+	display: flex;
+	--flex: inherit;
+	overflow: hidden;
+	text-overflow: hidden;
+	--background-color: yellow;
+	color: #009881;
+	white-space: wrap;
+	width: 0;
+	height: auto;
+	transition: all 450ms ease-in;
+	transition-delay: 1s;
+  }
+  .infocardContainer:hover div *{
+	--background-color: purple;
+	display: flex;
+	visibility: visible;
+	transition: all 1s ease-out;
+	transition-delay: 500ms;
+	width: 100%;
+	height: auto;
+  }
+  
+  .infocardContainer #main, .infocardContainer #main img{
+	--background-color: red;
+	height: 300px;
+	width: 300px;
+	padding-right: 10px;
+	border-radius: 100%;
+	flex-shrink: 0;
+	object-fit: cover;
+  }
+  .infocardContainer #main img{
+	height: 280px;
+	width: 280px;
+	transition: none;
+	display: float;
+	position: relative;	
+	margin: 0 0 0 0; padding: 0 0 0 0;
+  }
+
+  .infocardContainer #textbois #hotlinks {
+	max-width: 60%;
+	max-height: 30px;
+	--background-color: black;
+	position:absolute;
+	bottom: 5px;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 13px;
+	transition: none;
+  }
+  .infocardContainer #textbois #hotlinks * {
+	color: #009881;
+	max-width: 30px;
+	--margin: 0 1px 0 1px;
+	border-radius: 25px;
+  }
