@@ -9,7 +9,7 @@ const Codegame = (props) => {
         
         <div>
             {game.map((game) => (
-                <div className="content">
+                <div className="content shrink">
                     <h1>{game.name}</h1>
                     <p>{game.description}</p>
                     <a href={game.url}>{game.url}</a>
