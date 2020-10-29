@@ -9,7 +9,7 @@ const Cheatsheet = (props) => {
         {cheatsheet.map((cheatsheet) => (
             <div  className="content">
                 <h1>{cheatsheet.name}</h1>
-                <h3><a href= {cheatsheet.url}>Visit</a></h3>
+                <a href={cheatsheet.url} target="_blank"><img src={cheatsheet.img}></img></a>
             </div>
         ))}
     </div>
