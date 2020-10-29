@@ -33,6 +33,29 @@ const Gear = (props) => {
             
           </div>
         </div>  
+//         <div className="content">
+//           <img src={gear.img}/>
+//           <h1>{gear.name}</h1>
+//           <h3>Price: ›{gear.price}</h3>
+//           <p>{gear.description}</p>
+//           <h3>Review</h3><p>{gear.review}</p> 
+//           <h3><a href= {gear.url}>Buy</a></h3>
+//           <div className={classes.root}>
+//             <Button variant="contained"
+//               onClick={() => {
+//                 props.selectGear(gear);
+//                 props.history.push("/edit");
+//               }}
+//             >EDIT</Button>
+//             <Button variant="contained" color="secondary"
+//               onClick={() => {
+//                 props.deleteGear(gear);
+//               }}
+//             >
+//               Delete
+//             </Button>
+//           </div>
+//         </div>
       ))}
     </div>
   ) 
