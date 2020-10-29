@@ -4,8 +4,9 @@ import { Route, Link, Switch } from "react-router-dom";
 import Gear from "./Gear.js";
 import Home from "./Home.js";
 import Interview from "./Interview"
+import Cheatsheet from "./Cheatsheet"
 import Video from "./Video.js";
-import Cheatsheet from "./Cheatsheet.js"
+import Codegame from "./Codegame.js"
 
 
 function App() {
@@ -15,6 +16,10 @@ function App() {
   // State to Hold Gear
   const [gear, setGear] = React.useState([])
   const [interview, setInterview] = React.useState([])
+  const [video, setVideo] = React.useState([])
+  const [game, setGame] = React.useState([])
+  const [cheatsheet, setCheatsheet] = React.useState([])
+
 
   // Empty Gear
   const emptyGear = {
@@ -47,9 +52,40 @@ function App() {
       })
   }
 
+  const getVideo = () => {
+    fetch(url + "/video/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setVideo(data);
+      })
+  }
+  const getGame = () => {
+    fetch(url + "/codegames/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setGame(data);
+      })
+  }
+
+  const getCheatsheet = () => {
+    fetch(url + "/cheatsheet/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setCheatsheet(data);
+      })
+  }
+
+
   // UseEffect to do initial fetch of gear
   React.useEffect(() => getGear(), []);
   React.useEffect(() => getInterview(), []);
+  React.useEffect(() => getVideo(), []);
+  React.useEffect(() => getGame(), []);
+  React.useEffect(() => getCheatsheet(), []);
+
 
   // handleCreate to create new gear
   const handleCreate = (newGear) => {
@@ -97,9 +133,17 @@ function App() {
           <Link to="/gear">
             <a>Tech Gear</a>
           </Link>
-          <a href="#">Cheatsheets</a>
-          <a href="#">Code Games</a>
-          <a href="#">Videos</a>
+
+          <Link to="/codegames">
+            <a>Code Games</a>
+          </Link>
+          <Link to="/video">
+            <a>Videos</a>
+          </Link>
+
+          <Link to="/cheatsheets">
+            <a>Cheatsheets</a>
+          </Link>
           <Link to="/interviewprep">
             <a>Interview Prep</a>
           </Link>
@@ -110,9 +154,10 @@ function App() {
         <Switch>
           <Route exact path="/" render={(rp) => <Home/>} />
           <Route exact path="/gear" render={(rp) => <Gear {...rp} gear= {gear} selectGear={selectGear} deleteGear= {deleteGear}/>} />
-          <Route exact path="/interviewprep" render={(rp) => <Interview {...rp} interview={interview}/>}>
-
-          </Route>
+          <Route exact path="/interviewprep" render={(rp) => <Interview {...rp} interview={interview}/>} />
+          <Route exact path="/video" render={(rp) => <Video {...rp} video= {video}/>}/>          
+          <Route exact path="/codegames" render={(rp) => <Codegame {...rp} game= {game}/>}/>          
+          <Route exact path="/cheatsheets" render={(rp) => <Cheatsheet {...rp} cheatsheet={cheatsheet}></Cheatsheet>}/>
         </Switch>
       </main>
     </div>
