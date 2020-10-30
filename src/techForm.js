@@ -17,63 +17,63 @@ const Form = (props) => {
       setFormData({ ...formData, [event.target.name]: event.target.value });
     };
 
-    // const emptyGear = {
-    //     name: "",
-    //     price: 0,
-    //     description: "",
-    //     review: "",
-    //     url: "",
-    //     img: ""
-    //   }
-
-
     return(
-        <div>
-            <h1 style={{border: "3px solid yellow", marginTop:"300px"}}> HELLO</h1>
-            <form onSubmit={handleSubmit}>
-                <input
+        <div className="formContainer">
+            {/* <h1 style={{border: "3px solid yellow", marginTop:"150px"}}> Add New Tech Gear</h1> */}
+            <form onSubmit={handleSubmit} className="form">
+                <div className="techGearh1">
+                    <h1>Add New Tech Gear</h1>
+                </div>
+                
+                <input className="input1"
                 type="text"
                 name="name"
+                placeholder="product name"
                 value={formData.name}
                 onChange={handleChange}
                 />
-                <input
+                <input className="input2"
                 type="number"
                 name="price"
-                value={formData.price}
+                placeholder="product price"
+                // value={formData.price}
                 onChange={handleChange}
                 />
-                <input
+                <textarea className="input3"
                 type="text"
                 name="description"
-                value={formData.description}
+                placeholder="product description"
+                // value={formData.description}
                 onChange={handleChange}
                 />
-                <input
+                <textarea className="input4"
                 type="text"
                 name="review"
-                value={formData.review}
+                placeholder="product review"
+                // value={formData.review}
                 onChange={handleChange}
                 />
-                <input
+                <input className="input5"
                 type="text"
                 name="url"
+                placeholder="product url"
                 value={formData.url}
                 onChange={handleChange}
                 />
-                <input
+                <input className="input6"
                 type="text"
                 name="img"
+                placeholder="product image address"
                 value={formData.img}
                 onChange={handleChange}
                 />
-                <input type="submit" />
+                <input type="submit" className="submit"/>
             </form>
         </div>
     )
 }
 
-
+// textarea
 // const Form = (props) => {
 //   //STATE FOR THE FORM
 //   const [formData, setFormData] = React.useState(props.gear);
