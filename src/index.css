@@ -208,7 +208,7 @@ code {
 
 /* The Magic */
 #header {
-	position: fixed;
+	/* position: fixed; */
 	top: 0;
 	left: 0;
 	right: 0;
@@ -535,4 +535,19 @@ code {
 		border: 2px solid white;
 		border-radius: 5px;
 		font-size: 1.2vw;
+	}
+
+	.button {
+		margin-top: 2%;
+		width: 4%;
+		position:absolute;
+		z-index: 10;
+		border: 2px solid fuchsia;
+		border-radius: 5px;
+		padding: 0.5% 1% 0.7% 1%;
+		text-align: center;
+		text-decoration: none;
+		color: fuchsia;
+		font-size: 1.2vw;
+		background-color: black;
 	}
