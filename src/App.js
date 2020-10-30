@@ -7,6 +7,7 @@ import Interview from "./Interview"
 import Cheatsheet from "./Cheatsheet"
 import Video from "./Video.js";
 import Codegame from "./Codegame.js"
+import Form from "./techForm.js"
 
 
 function App() {
@@ -87,7 +88,7 @@ function App() {
   React.useEffect(() => getCheatsheet(), []);
 
 
-  // handleCreate to create new gear
+  // // handleCreate to create new gear
   const handleCreate = (newGear) => {
     fetch(url + "/gear/", {
       method: "post",
@@ -147,17 +148,22 @@ function App() {
           <Link to="/interviewprep">
             <a className="intPrep">Interview Prep</a>
           </Link>
+          <Link to="/techForm">
+            <a style={{display:"none"}}>techForm</a>
+          </Link>
+
           <span class="line"></span>
 	      </nav>
       </header>
       <main>
         <Switch>
           <Route exact path="/" render={(rp) => <Home/>} />
-          <Route exact path="/gear" render={(rp) => <Gear {...rp} gear= {gear} selectGear={selectGear} deleteGear= {deleteGear}/>} />
+          <Route exact path="/gear" render={(rp) => <Gear {...rp} gear= {gear} emptyGear= {emptyGear} handleCreate = {handleCreate} selectGear={selectGear} deleteGear= {deleteGear}/>} />
           <Route exact path="/interviewprep" render={(rp) => <Interview {...rp} interview={interview}/>} />
           <Route exact path="/video" render={(rp) => <Video {...rp} video= {video}/>}/>          
           <Route exact path="/codegames" render={(rp) => <Codegame {...rp} game= {game}/>}/>          
           <Route exact path="/cheatsheets" render={(rp) => <Cheatsheet {...rp} cheatsheet={cheatsheet}></Cheatsheet>}/>
+          <Route exact path="/techForm" render={(rp) => <Form {...rp} label="create" gear={emptyGear} handleSubmit={handleCreate} />}/>
         </Switch>
       </main>
     </div>
