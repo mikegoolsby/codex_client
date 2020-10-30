@@ -151,7 +151,6 @@ function App() {
           <Link to="/techForm">
             <a style={{display:"none"}}>techForm</a>
           </Link>
-
           <span class="line"></span>
 	      </nav>
       </header>
