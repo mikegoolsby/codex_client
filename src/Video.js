@@ -10,9 +10,9 @@ const Video = (props) => {
         <div>
             {video.map((video) => (
                 <div className="content shrink">
-                    <h1>{video.name}</h1>
-                    <p>{video.description}</p>
-                    <a href={video.url}>{video.url}</a>
+                    <h1 className="map-head">{video.name}</h1>
+                    <p className="map-head">What will I learn?</p><p className="padding">{video.description}</p>
+                    <p className="map-head">Check it out <a href={video.url} target="_blank" className="link-styled">here</a></p>
                 </div>
             ))}
         </div>
