@@ -10,13 +10,13 @@ const Interview = (props) => {
         <div>
             {interview.map((interview) => (
                 <div  className="content shrink">
-                    <a href={interview.url} target="_blank"><img src={interview.img}></img></a>
-                    <h1>{interview.name}</h1>
+                    <a href={interview.url} target="_blank"><img src={interview.img} className="padding"></img></a>
+                    <h1 className="map-head">{interview.name}</h1>
                     <br></br>
-                    <h3>Price: ${interview.price}</h3>
+                    <h2 className="hvr-wobble-to-bottom-right pricing">What does it cost? ${interview.price}</h2>
                     <br></br>
-                    <p>What it is: {interview.description}</p>
-                    <h5>What languages I can practice: {interview.language}</h5>
+                    <p className="map-head">What is it?</p><p className="padding">{interview.description}</p>
+                    <p><p className="map-head">What languages can I practice?</p>{interview.language}</p>
                 </div>
             ))}
         </div>
