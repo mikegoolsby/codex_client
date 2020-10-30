@@ -8,9 +8,9 @@ const Cheatsheet = (props) => {
         <div>
         {cheatsheet.map((cheatsheet) => (
             <div  className="content shrink">
-                <h1>{cheatsheet.name}</h1>
+                <h1 className="map-head">{cheatsheet.name}</h1>
                 <br></br>
-                <a href={cheatsheet.url} target="_blank"><img src={cheatsheet.img}></img></a>
+                <a href={cheatsheet.url} target="_blank"><img src={cheatsheet.img} className="padding"></img></a>
             </div>
         ))}
     </div>
