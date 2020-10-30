@@ -1,6 +1,10 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { Route, Link, Switch } from "react-router-dom";
+import Form from "./techForm.js"
+import Cheatsheet from "./Cheatsheet"
+// import React, { Component } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,10 +17,51 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Gear = (props) => {
+
+  const [newGear, setNewGear] = React.useState([])
+
+  const url = "https://codex-project-backend.herokuapp.com"
+
+  // Empty Gear
+  const emptyGear = {
+    name: "",
+    price: 0,
+    description: "",
+    review: "",
+    url: "",
+    img: ""
+  }
+
+  const getGear = () => {
+    fetch(url + "/gear/")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data)
+        setNewGear(data);
+      })
+  }
+
+  // handleCreate to create new gear
+  const handleCreate = (newGear) => {
+    fetch(url + "/gear/", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newGear),
+    }).then(response => {
+      getGear();
+    })
+  }
   
   const {gear} = props
 
   const classes = useStyles();
+
+  // const handleClick = () => {
+
+
+  // }
   
   const loaded = () => (
     <div>
@@ -35,10 +80,12 @@ const Gear = (props) => {
               <hr className="style"></hr>
               <h3 className="review-gear">Review</h3>
               <p className="p-gear">{gear.review}</p>
-              <button className="btn-gear"> <i class="fa fa-shopping-bag"></i>Buy Now</button>
+              <a href="http://google.com">Buy</a>
+              {/* <a href="google.com"><button className="btn-gear"> <i class="fa fa-shopping-bag"></i>Buy Now</button></a> */}
             </div> 
           </div>
-        </div>  
+        </div> 
+
 //         <div className="content">
 //           <img src={gear.img}/>
 //           <h1>{gear.name}</h1>
@@ -67,7 +114,19 @@ const Gear = (props) => {
   ) 
   console.log(gear)
   const loading = <h1>Loading...</h1>
-  return gear.length > 0 ? loaded() : loading
+  return (
+    <div className="container">
+      <Link to ="/newForm">
+        <button>Add New Tech Gear</button>
+      </Link>
+      <Switch>
+      {/* <Route exact path="/cheatsheets" render={(rp) => <Cheatsheet/>}/> */}
+      <Route exact path="/newForm" render={(rp) => <Form/>}/>
+{/* {...rp} label="create" emptyGear={props.emptyGear} handleSubmit={handleCreate} */}
+      </Switch>
+      {gear.length > 0 ? loaded() : loading}
+    </div>
+    )
 };
 
 export default Gear;
