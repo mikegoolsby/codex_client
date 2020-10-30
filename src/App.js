@@ -149,7 +149,7 @@ function App() {
             <a className="intPrep">Interview Prep</a>
           </Link>
           <Link to="/techForm">
-            <a>techForm</a>
+            <a style={{display:"none"}}>techForm</a>
           </Link>
 
           <span class="line"></span>

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Route, Link, Switch } from "react-router-dom";
 import Form from "./techForm.js"
-import Cheatsheet from "./Cheatsheet"
+
 // import React, { Component } from 'react';
 
 const useStyles = makeStyles((theme) => ({
@@ -116,14 +116,14 @@ const Gear = (props) => {
   const loading = <h1>Loading...</h1>
   return (
     <div className="container">
-      <Link to ="/newForm">
-        <button>Add New Tech Gear</button>
+      <Link to="/techForm">
+            <button style={{marginTop:"300px"}}>techForm</button>
       </Link>
-      <Switch>
+      
       {/* <Route exact path="/cheatsheets" render={(rp) => <Cheatsheet/>}/> */}
-      <Route exact path="/newForm" render={(rp) => <Form/>}/>
+      <Route exact path="/techForm" render={(rp) => <Form {...rp} label="create" gear={emptyGear} handleSubmit={handleCreate} />}/>
 {/* {...rp} label="create" emptyGear={props.emptyGear} handleSubmit={handleCreate} */}
-      </Switch>
+      
       {gear.length > 0 ? loaded() : loading}
     </div>
     )
