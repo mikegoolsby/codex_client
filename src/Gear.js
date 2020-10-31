@@ -115,9 +115,9 @@ const Gear = (props) => {
   console.log(gear)
   const loading = <h1>Loading...</h1>
   return (
-    <div className="container">
-      <Link to="/techForm">
-            <button style={{marginTop:"300px"}}>techForm</button>
+    <div>
+      <Link to="/techForm">        
+        <a className="btn-gear">Recommend Tech Gear</a>        
       </Link>
       
       {/* <Route exact path="/cheatsheets" render={(rp) => <Cheatsheet/>}/> */}
