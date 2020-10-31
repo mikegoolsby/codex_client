@@ -1,5 +1,5 @@
 # CODEX Readme
-Here lies our readme
+CODEX is a resource repository for those about to attend a coding bootcamp - it includes tech gear recommendations, code games you can try, video resources, cheatsheets, and help for prepping for interviews.
 
 # CODEX Livelink
 https://reverent-kalam-023988.netlify.app/
