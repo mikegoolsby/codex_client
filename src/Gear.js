@@ -64,7 +64,7 @@ const Gear = (props) => {
   // }
   
   const loaded = () => (
-    <div>
+    <div className="gearDiv">
       {gear.map((gear) => (
         <div className="card">
           <div className="left">
