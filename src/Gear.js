@@ -64,7 +64,7 @@ const Gear = (props) => {
   // }
   
   const loaded = () => (
-    <div>
+    <div className="gearDiv">
       {gear.map((gear) => (
         <div className="card">
           <div className="left">
@@ -80,7 +80,7 @@ const Gear = (props) => {
               <hr className="style"></hr>
               <h3 className="review-gear">Review</h3>
               <p className="p-gear">{gear.review}</p>
-              <a href="http://google.com">Buy</a>
+              <a href={gear.url} target="_blank" className="button">Buy</a>
               {/* <a href="google.com"><button className="btn-gear"> <i class="fa fa-shopping-bag"></i>Buy Now</button></a> */}
             </div> 
           </div>
