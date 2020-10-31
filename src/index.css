@@ -327,6 +327,7 @@ code {
 	border-color: #006c9d;
 	/* margin-top: 100px; */
 	border-radius: 8px;
+	position: relative;
   }
   
   .left {
