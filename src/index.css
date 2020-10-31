@@ -447,8 +447,8 @@ code {
 	  
 	  .btn-gear:hover::before {
 		/* box-shadow: none; */
-		box-shadow: 10px 10px 0 #00BFFF, 
-					20px 20px 0 #009881;
+		box-shadow: 0.7vw 0.7vw 0 #00BFFF, 
+					1.4vw 1.4vw 0 #009881;
 		left: 0;
 		top: 0;
 		width: 100%;
