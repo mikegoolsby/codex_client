@@ -31,6 +31,12 @@ const Home = (props) => {
             <ul>
                 <li>Links to youtube channels and videos that will be of great help in your preperation for bootcamp</li>
             </ul>
+            <br></br>
+            <h2 class="title"> -Interview Prep- </h2>
+            <br></br>
+            <ul>
+                <li>Resources to help you prepare for the techincal aspect of the Software Engineering interview process</li>
+            </ul>
         </div>
     )
 }
